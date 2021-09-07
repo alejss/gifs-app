@@ -10,7 +10,7 @@ export const GifExpertApp = () => {
     <>
       <h2>Gif Expert App</h2>
       <hr />
-      <AddCategory/>
+      <AddCategory seetCategories={seetCategories} />
       <ol>
         {
           categories.map((categorie) => (<li key={categorie}>{categorie}</li>))
