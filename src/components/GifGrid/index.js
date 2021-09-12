@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
 import { GridGifItem } from '../GridGifItem'
+import { getGifs } from '../../services/gifs'
 
 export const GifGrid = ({ category }) => {
 
-    const [images, setImages] = useState([])
+    const [gifs, setGifs] = useState([])
 
     useEffect(() => {
-        getGifs()
-    })
-
-    const getGifs = async () => {
-        const categoryEncode = encodeURI(category)
-        const url = `https://api.giphy.com/v1/gifs/search?q=${categoryEncode}&limit=10&api_key=${process.env.REACT_APP_GIPHY_KEY}`
-        const resp = await fetch(url)
-        const { data } = await resp.json()
-
-        const gifs = data.map(({ id, title, images }) => ({ id, title, url: images.downsized_medium.url }))
-        setImages(gifs)
-    }
+        (async () => {
+            const gifsList = await getGifs(category)
+            setGifs(gifsList)
+        })()
+    }, [category])
 
     getGifs()
 
@@ -27,7 +21,7 @@ export const GifGrid = ({ category }) => {
             <h3 key={category}>{category}</h3>
             <div className="card-grid">
                 {
-                    images.map((image) => (
+                    gifs.map((image) => (
                         <GridGifItem
                             key={image.id}
                             {...image}
