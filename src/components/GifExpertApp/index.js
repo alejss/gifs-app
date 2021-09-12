@@ -3,9 +3,10 @@ import './style.css'
 
 // Components
 import { AddCategory } from '../AddCategory'
+import { GifGrid } from '../GifGrid'
 
 export const GifExpertApp = () => {
-  const [categories, seetCategories] = useState(['Cats', 'Dogs', 'Random'])
+  const [categories, seetCategories] = useState(['Cats'])
   return (
     <>
       <h2>Gif Expert App</h2>
@@ -13,7 +14,7 @@ export const GifExpertApp = () => {
       <AddCategory seetCategories={seetCategories} />
       <ol>
         {
-          categories.map((categorie) => (<li key={categorie}>{categorie}</li>))
+          categories.map((category) => (<GifGrid key={category} category={category} />))
         }
       </ol>
     </>
