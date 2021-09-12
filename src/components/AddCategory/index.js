@@ -11,7 +11,7 @@ export const AddCategory = ({ seetCategories }) => {
 
     const handleSubmit = (evn) => {
         evn.preventDefault()
-        if (inputValue.trim().length > 2) seetCategories(categories => [...categories, inputValue])
+        if (inputValue.trim().length > 2) seetCategories(categories => [inputValue, ...categories])
         setinputValue('')
     }
 
