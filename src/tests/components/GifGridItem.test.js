@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme'
 
-import { GridGifItem } from '../components/GridGifItem'
+import { GridGifItem } from '../../components/GridGifItem'
 
 describe('GifGridItem', () => {
     const data = { title: 'Testing Component', url: 'www.1337.com/hello.png' }
