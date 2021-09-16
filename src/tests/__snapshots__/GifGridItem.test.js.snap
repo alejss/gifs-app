@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifGridItem Testing Snapshot Component 1`] = `
+<div
+  className="card animate__animated animate__swing"
+>
+  <img
+    alt="Testing Component"
+    src="www.1337.com/hello.png"
+  />
+  <p>
+    Testing Component
+  </p>
+</div>
+`;
