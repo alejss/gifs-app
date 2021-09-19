@@ -4,12 +4,11 @@ import { GridGifItem } from '../GridGifItem'
 import { useFetchGifs } from '../../hooks/useFetchGifs'
 
 export const GifGrid = ({ category }) => {
-
-    const { gifs } = useFetchGifs(category)
-
+    const { gifs, loading } = useFetchGifs(category)
     return (
         <>
             <h3 key={category}>{category}</h3>
+            { loading && <p className='animate__animated animate__flash'>Loading...</p> }
             <div className="card-grid">
                 {
                     gifs.map((image) => (
