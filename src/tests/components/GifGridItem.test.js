@@ -2,7 +2,7 @@ import { shallow } from 'enzyme'
 
 import { GridGifItem } from '../../components/GridGifItem'
 
-describe('GifGridItem', () => {
+describe('Testing <GifGridItem/>', () => {
     const data = { title: 'Testing Component', url: 'www.1337.com/hello.png' }
 
     const wrapper = shallow(<GridGifItem {...data} />)
