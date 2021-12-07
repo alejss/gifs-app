@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <GifGrid /> Testing Snapshot Component 1`] = `
+<Fragment>
+  <h3
+    key="Dogs"
+  >
+    Dogs
+  </h3>
+  <p
+    className="animate__animated animate__flash"
+  >
+    Loading...
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;
