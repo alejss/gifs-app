@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { getGifs } from '../services/gifs'
 
 export const useFetchGifs = (category) => {
-    const [state, setstate] = useState({
+    const [state, setState] = useState({
         gifs: [],
         loading: true,
     })
@@ -10,11 +10,14 @@ export const useFetchGifs = (category) => {
     useEffect(() => {
         const fetchGifs = async () => {
             const gifs = await getGifs(category)
-            setstate({ gifs, loading: false })
+            setState({ gifs, loading: false })
         };
         fetchGifs()
 
-    }, [category, setstate])
+    }, [category])
 
     return state
 }
+
+
+
